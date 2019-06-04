@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+        <ul id="app">
+                <li>{{message}}</li>
+                <li v-text="text"></li>
+                <li v-html="messageHtml"></li>
+                <li v-show="ok">123</li>
+                <li v-for="tag in tags">{{tag.text}}</li>
+            </ul>
+            <button @click="Toggle()">button</button>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message:"Hello Vue1",
+            text:"hello Vue2",
+            messageHtml:"<h2>hello Vue3</h2>",
+            ok:true,
+            tags:[
+                {text:1},
+                {text:2},
+                {text:3}
+            ]
+        },
+        methods:{
+            Toggle:function(){
+        　　　　this.ok=false;
+        　　　}
+        }
+    })
+</script>
+</html>
